@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adithyan U | Portfolio</title>
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Smooth scrolling and basic animations */
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', system-ui, sans-serif; }
+        .glass-card { background: rgba(24, 24, 27, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(63, 63, 70, 0.4); }
+    </style>
+</head>
+<body class="bg-zinc-950 text-gray-300 antialiased selection:bg-teal-500 selection:text-white">
+
+    <div class="max-w-5xl mx-auto px-6 py-12 space-y-24">
+
+        <!-- HEADER / HERO SECTION -->
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6">
+                <h1 class="text-5xl md:text-6xl font-bold text-white tracking-tight">Adithyan U</h1>
+                <h2 class="text-2xl text-teal-400 font-medium leading-snug">
+                    Computer Science Engineering Student <br>
+                    <span class="text-gray-400">| Robotics & AI Enthusiast</span>
+                </h2>
+                <p class="flex items-center gap-2 text-gray-400">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                    Palakkad, Kerala, India
+                </p>
+                
+                <!-- Contact Links -->
+                <div class="flex flex-wrap gap-3 pt-4">
+                    <a href="mailto:adithyan27602@gmail.com" class="px-4 py-2 bg-zinc-900 hover:bg-zinc-800 border border-zinc-700 rounded-lg text-sm text-white transition">Email</a>
+                    <a href="tel:+918714227602" class="px-4 py-2 bg-zinc-900 hover:bg-zinc-800 border border-zinc-700 rounded-lg text-sm text-white transition">Phone</a>
+                    <a href="https://linkedin.com/in/adithyan-u" target="_blank" class="px-4 py-2 bg-zinc-900 hover:bg-zinc-800 border border-zinc-700 rounded-lg text-sm text-white transition">LinkedIn</a>
+                    <a href="https://github.com/adithyan-u-DEV" target="_blank" class="px-4 py-2 bg-zinc-900 hover:bg-zinc-800 border border-zinc-700 rounded-lg text-sm text-white transition">GitHub</a>
+                    <a href="https://dribbble.com/ad7kichu" target="_blank" class="px-4 py-2 bg-zinc-900 hover:bg-zinc-800 border border-zinc-700 rounded-lg text-sm text-white transition">Dribbble</a>
+                </div>
+            </div>
+            <div class="relative h-96 rounded-2xl overflow-hidden border border-zinc-800 shadow-2xl">
+                <!-- Replace src with your image -->
+                <img src="profile.jpg" alt="Adithyan Avatar" class="object-cover w-full h-full">
+            </div>
+        </section>
+
+        <!-- ASAR SECTION 1 -->
+        <section class="glass-card rounded-3xl p-8 md:p-12 shadow-xl">
+            <p class="text-teal-400 font-bold tracking-wider text-sm mb-2 uppercase">Winner - People's Choice Award, Yukthi 2026</p>
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-10">ASAR: Disaster-Relief Rover</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <div class="rounded-xl overflow-hidden border border-zinc-700 bg-zinc-900 h-64 md:h-auto">
+                    <img src="asar-rover.jpg" alt="ASAR Rover" class="object-cover w-full h-full">
+                </div>
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="text-white font-semibold mb-1">Role</h3>
+                        <p class="text-gray-400 text-sm">Software Architecture & Hardware Integration</p>
+                    </div>
+                    <div>
+                        <h3 class="text-white font-semibold mb-1">The Goal</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">Build the "brain" for a mobile disaster-relief rover capable of identifying and tracking individuals in hazardous zones.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-white font-semibold mb-1">The Tech Stack</h3>
+                        <p class="text-teal-300 text-sm">Raspberry Pi • Python • OpenCV • TensorFlow</p>
+                    </div>
+                    <div>
+                        <h3 class="text-white font-semibold mb-1">The Software-to-Hardware Bridge</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">Engineered the integration logic directly on the Raspberry Pi. The onboard AI processes the camera feed to detect humans, and the Python scripts instantly translate that spatial data into physical motor control for autonomous navigation—entirely without a secondary microcontroller.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ASAR DEEP DIVE SECTION -->
+        <section class="glass-card rounded-3xl p-8 md:p-12 shadow-xl">
+            <h2 class="text-3xl font-bold text-white mb-10">Yukthi 2026 Technical Deep Dive</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+                <div class="space-y-8 order-2 md:order-1">
+                    <div>
+                        <h3 class="text-white font-semibold text-lg mb-2">Real-World Constraints</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">Collaborated directly with local fire station officers to understand the strict operational requirements of disaster robotics.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-white font-semibold text-lg mb-2">Manual Override Protocols</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">Wrote secure failsafe logic allowing human operators to instantly bypass the autonomous AI and take full remote control of the rover during critical, high-risk deployments.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-white font-semibold text-lg mb-2">Digital Mapping</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">Developed and integrated real-time digital mapping features to process environmental data and assist rescue teams in efficient route planning.</p>
+                    </div>
+                </div>
+                <div class="rounded-xl overflow-hidden border border-zinc-700 bg-zinc-900 h-64 md:h-80 order-1 md:order-2">
+                    <img src="asar-vision.jpg" alt="OpenCV Vision Feed" class="object-cover w-full h-full">
+                </div>
+            </div>
+        </section>
+
+        <!-- K9 SECTION -->
+        <section class="glass-card rounded-3xl p-8 md:p-12 shadow-xl">
+            <h2 class="text-3xl font-bold text-white mb-4">K9 Autonomous Surveillance Robot</h2>
+            <p class="text-gray-400 mb-10">The goal of this project was to develop a dynamic, autonomous indoor patrolling system capable of operating in unpredictable environments.</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <div class="rounded-xl overflow-hidden border border-zinc-700 bg-zinc-900 h-64 md:h-auto">
+                    <img src="k9-robot.jpg" alt="K9 Robot" class="object-cover w-full h-full">
+                </div>
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="text-white font-semibold mb-1">Tech Stack</h3>
+                        <p class="text-teal-300 text-sm">Raspberry Pi • Python • OpenCV</p>
+                    </div>
+                    <div>
+                        <h3 class="text-white font-semibold mb-1">Visual Processing</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">Engineered the software architecture to process optical sensor feeds in real-time, executing continuous facial recognition and human tracking within its operational area.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-white font-semibold mb-1">Dynamic Avoidance</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">Translated software-based spatial detection algorithms into instantaneous physical motor responses, allowing the robot to autonomously avoid obstacles while navigating unpredictable indoor environments.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BEACON SECTION -->
+        <section class="glass-card rounded-3xl p-8 md:p-12 shadow-xl">
+            <p class="text-teal-400 font-bold tracking-wider text-sm mb-2 uppercase">Finalist - Sankalp Hackathon 2025</p>
+            <h2 class="text-3xl font-bold text-white mb-10">Beacon - Offline Flood Relief App</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                
+                <!-- NEW 3-IMAGE LAYOUT -->
+                <div class="flex flex-col gap-4">
+                    <!-- Image 1: Logo -->
+                    <div class="rounded-xl overflow-hidden border border-zinc-700 bg-zinc-900 h-48 md:h-56 p-4 flex justify-center items-center">
+                        <img src="beacon-logo.jpg" alt="Beacon App Logo" class="object-contain h-full w-auto">
+                    </div>
+                    <!-- Images 2 & 3: Screens side-by-side -->
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="rounded-xl overflow-hidden border border-zinc-700 bg-zinc-900 h-48 md:h-56">
+                            <img src="beacon-screens-1.jpg" alt="Beacon Screens Part 1" class="object-cover object-top w-full h-full">
+                        </div>
+                        <div class="rounded-xl overflow-hidden border border-zinc-700 bg-zinc-900 h-48 md:h-56">
+                            <img src="beacon-screens-2.jpg" alt="Beacon Screens Part 2" class="object-cover object-top w-full h-full">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TEXT CONTENT -->
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="text-white font-semibold mb-1">Role</h3>
+                        <p class="text-gray-400 text-sm">UI/UX Design & Network Logic</p>
+                    </div>
+                    <div>
+                        <h3 class="text-white font-semibold mb-1">The Goal</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">Ensure emergency communication during complete network outages using decentralized technology.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-white font-semibold mb-1">The Tech Stack</h3>
+                        <p class="text-teal-300 text-sm">Flutter • Dart • Bluetooth Low Energy (BLE)</p>
+                    </div>
+                    <div>
+                        <h3 class="text-white font-semibold mb-1">Mesh Networking</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">Optimized BLE device discovery algorithms to rapidly form a peer-to-peer mesh network between devices.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-white font-semibold mb-1">User Experience</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">Designed the frontend interface to be highly intuitive during high-stress disaster scenarios, proving my ability to bridge complex backend communication protocols with accessible user design.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLS GRID -->
+        <section class="py-10">
+            <h2 class="text-2xl font-bold text-white mb-8 text-center">Skills & Technologies at a Glance</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="p-6 glass-card rounded-2xl">
+                    <h3 class="text-teal-400 font-bold mb-2">🤖 Robotics & AI</h3>
+                    <p class="text-gray-400 text-sm">Raspberry Pi, TensorFlow, OpenCV - building intelligent autonomous systems for real-world deployment.</p>
+                </div>
+                <div class="p-6 glass-card rounded-2xl">
+                    <h3 class="text-teal-400 font-bold mb-2">💻 Software Development</h3>
+                    <p class="text-gray-400 text-sm">Python, Flutter, Dart - from backend logic to polished frontend interfaces.</p>
+                </div>
+                <div class="p-6 glass-card rounded-2xl">
+                    <h3 class="text-teal-400 font-bold mb-2">📡 Networking & IoT</h3>
+                    <p class="text-gray-400 text-sm">Bluetooth Low Energy, mesh networking, hardware-software integration on embedded platforms.</p>
+                </div>
+                <div class="p-6 glass-card rounded-2xl">
+                    <h3 class="text-teal-400 font-bold mb-2">🎨 UI/UX Design</h3>
+                    <p class="text-gray-400 text-sm">Human-centered design for high-stress environments, bridging complex protocols with intuitive interfaces.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="text-center py-8 border-t border-zinc-800">
+            <p class="text-gray-500 text-sm">Let's Connect: Reach out via <a href="mailto:adithyan27602@gmail.com" class="text-teal-400 hover:underline">adithyan27602@gmail.com</a> or connect on <a href="https://linkedin.com/in/adithyan-u" class="text-teal-400 hover:underline">LinkedIn</a> / <a href="https://github.com/adithyan-u-DEV" class="text-teal-400 hover:underline">GitHub</a>.</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
