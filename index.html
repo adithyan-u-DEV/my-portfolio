@@ -1,561 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Adithyan U | Portfolio</title>
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
-
-    :root {
-      --bg: #09090b;
-      --card: rgba(24, 24, 27, 0.7);
-      --border: rgba(255, 255, 255, 0.08);
-      --text: #f4f4f5;
-      --muted: #a1a1aa;
-      --accent: #2dd4bf;
-      --accent-dark: #14b8a6;
-      --shadow: 0 0 40px rgba(45, 212, 191, 0.08);
-    }
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: radial-gradient(circle at top, #111827 0%, #09090b 45%);
-      color: var(--text);
-      line-height: 1.7;
-      overflow-x: hidden;
-    }
-
-    a {
-      text-decoration: none;
-      color: var(--accent);
-      transition: 0.3s ease;
-    }
-
-    a:hover {
-      color: #99f6e4;
-    }
-
-    img {
-      width: 100%;
-      display: block;
-      border-radius: 18px;
-    }
-
-    .container {
-      width: 92%;
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    section {
-      padding: 80px 0;
-    }
-
-    .glass-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 28px;
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-      box-shadow: var(--shadow);
-      overflow: hidden;
-    }
-
-    .tag {
-      display: inline-block;
-      background: rgba(45, 212, 191, 0.12);
-      border: 1px solid rgba(45, 212, 191, 0.3);
-      color: var(--accent);
-      padding: 8px 16px;
-      border-radius: 999px;
-      font-size: 0.85rem;
-      margin-bottom: 18px;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-    }
-
-    h1 {
-      font-size: 4rem;
-      line-height: 1.1;
-      margin-bottom: 16px;
-    }
-
-    h2 {
-      font-size: 2.4rem;
-      margin-bottom: 22px;
-    }
-
-    h3 {
-      font-size: 1.3rem;
-      margin-bottom: 10px;
-      color: var(--accent);
-    }
-
-    p {
-      color: var(--muted);
-      margin-bottom: 16px;
-      font-size: 1rem;
-    }
-
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      position: relative;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 340px 1fr;
-      gap: 50px;
-      align-items: center;
-    }
-
-    .profile-image {
-      position: relative;
-    }
-
-    .profile-image img {
-      border: 2px solid rgba(45, 212, 191, 0.25);
-      box-shadow: 0 0 40px rgba(45, 212, 191, 0.15);
-    }
-
-    .hero-text p {
-      font-size: 1.05rem;
-      max-width: 700px;
-    }
-
-    .hero-title {
-      color: var(--accent);
-      margin-bottom: 10px;
-      font-size: 1.2rem;
-      font-weight: 600;
-    }
-
-    .location {
-      margin-bottom: 25px;
-      color: #d4d4d8;
-    }
-
-    .contact-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-top: 25px;
-    }
-
-    .contact-links a {
-      padding: 10px 18px;
-      border-radius: 12px;
-      background: rgba(255,255,255,0.03);
-      border: 1px solid var(--border);
-      color: var(--text);
-      font-size: 0.95rem;
-    }
-
-    .contact-links a:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-      transform: translateY(-2px);
-    }
-
-    .project-card {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-      padding: 40px;
-      margin-top: 30px;
-      align-items: center;
-    }
-
-    .project-image img {
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .tech-stack {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin: 18px 0 25px;
-    }
-
-    .tech-stack span {
-      background: rgba(45, 212, 191, 0.1);
-      color: var(--accent);
-      border: 1px solid rgba(45, 212, 191, 0.25);
-      padding: 8px 14px;
-      border-radius: 999px;
-      font-size: 0.85rem;
-      font-weight: 600;
-    }
-
-    .project-content ul {
-      padding-left: 18px;
-      color: var(--muted);
-    }
-
-    .project-content li {
-      margin-bottom: 14px;
-    }
-
-    .beacon-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-      margin-top: 15px;
-    }
-
-    .beacon-grid img {
-      height: 260px;
-      object-fit: cover;
-    }
-
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 25px;
-      margin-top: 40px;
-    }
-
-    .skill-card {
-      padding: 30px;
-      transition: 0.3s ease;
-    }
-
-    .skill-card:hover {
-      transform: translateY(-5px);
-      border-color: rgba(45, 212, 191, 0.3);
-    }
-
-    .footer {
-      padding: 40px 0;
-      text-align: center;
-      border-top: 1px solid rgba(255,255,255,0.06);
-      color: var(--muted);
-    }
-
-    @media (max-width: 992px) {
-      .hero-grid,
-      .project-card {
-        grid-template-columns: 1fr;
-      }
-
-      .hero {
-        padding-top: 80px;
-      }
-
-      .profile-image {
-        max-width: 320px;
-        margin: auto;
-      }
-
-      h1 {
-        font-size: 3rem;
-      }
-    }
-
-    @media (max-width: 768px) {
-      section {
-        padding: 60px 0;
-      }
-
-      h1 {
-        font-size: 2.5rem;
-      }
-
-      h2 {
-        font-size: 2rem;
-      }
-
-      .skills-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .beacon-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .project-card {
-        padding: 25px;
-      }
-
-      .contact-links {
-        flex-direction: column;
-      }
-
-      .contact-links a {
-        width: 100%;
-        text-align: center;
-      }
-    }
-
-    @media (max-width: 500px) {
-      h1 {
-        font-size: 2rem;
-      }
-
-      .hero-title {
-        font-size: 1rem;
-      }
-
-      p {
-        font-size: 0.95rem;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adithyan U | Portfolio</title>
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Smooth scrolling and basic animations */
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', system-ui, sans-serif; }
+        .glass-card { background: rgba(24, 24, 27, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(63, 63, 70, 0.4); }
+    </style>
 </head>
+<body class="bg-zinc-950 text-gray-300 antialiased selection:bg-teal-500 selection:text-white">
 
-<body>
+    <div class="max-w-5xl mx-auto px-6 py-12 space-y-24">
 
-  <!-- HERO SECTION -->
-  <section class="hero">
-    <div class="container">
-      <div class="hero-grid">
-        
-        <div class="profile-image">
-          <img src="profile.jpg" alt="Adithyan U">
-        </div>
+        <!-- HEADER / HERO SECTION -->
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6">
+                <h1 class="text-5xl md:text-6xl font-bold text-white tracking-tight">Adithyan U</h1>
+                <h2 class="text-2xl text-teal-400 font-medium leading-snug">
+                    Computer Science Engineering Student <br>
+                    <span class="text-gray-400">| Robotics & AI Enthusiast</span>
+                </h2>
+                <p class="flex items-center gap-2 text-gray-400">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                    Palakkad, Kerala, India
+                </p>
+                
+                <!-- Contact Links -->
+                <div class="flex flex-wrap gap-3 pt-4">
+                    <a href="mailto:adithyan27602@gmail.com" class="px-4 py-2 bg-zinc-900 hover:bg-zinc-800 border border-zinc-700 rounded-lg text-sm text-white transition">Email</a>
+                    <a href="tel:+918714227602" class="px-4 py-2 bg-zinc-900 hover:bg-zinc-800 border border-zinc-700 rounded-lg text-sm text-white transition">Phone</a>
+                    <a href="https://linkedin.com/in/adithyan-u" target="_blank" class="px-4 py-2 bg-zinc-900 hover:bg-zinc-800 border border-zinc-700 rounded-lg text-sm text-white transition">LinkedIn</a>
+                    <a href="https://github.com/adithyan-u-DEV" target="_blank" class="px-4 py-2 bg-zinc-900 hover:bg-zinc-800 border border-zinc-700 rounded-lg text-sm text-white transition">GitHub</a>
+                    <a href="https://dribbble.com/ad7kichu" target="_blank" class="px-4 py-2 bg-zinc-900 hover:bg-zinc-800 border border-zinc-700 rounded-lg text-sm text-white transition">Dribbble</a>
+                </div>
+            </div>
+            <div class="relative h-96 rounded-2xl overflow-hidden border border-zinc-800 shadow-2xl">
+                <img src="profile.jpg.jpeg" alt="Adithyan Avatar" class="object-cover w-full h-full">
+            </div>
+        </section>
 
-        <div class="hero-text">
-          <div class="tag">Cyberpunk Portfolio</div>
+        <!-- ASAR SECTION 1 -->
+        <section class="glass-card rounded-3xl p-8 md:p-12 shadow-xl">
+            <p class="text-teal-400 font-bold tracking-wider text-sm mb-2 uppercase">Winner - People's Choice Award, Yukthi 2026</p>
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-10">ASAR: Disaster-Relief Rover</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <div class="rounded-xl overflow-hidden border border-zinc-700 bg-zinc-900 h-64 md:h-auto">
+                    <img src="asar-rover.jpg.jpeg" alt="ASAR Rover" class="object-cover w-full h-full">
+                </div>
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="text-white font-semibold mb-1">Role</h3>
+                        <p class="text-gray-400 text-sm">Software Architecture & Hardware Integration</p>
+                    </div>
+                    <div>
+                        <h3 class="text-white font-semibold mb-1">The Goal</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">Build the "brain" for a mobile disaster-relief rover capable of identifying and tracking individuals in hazardous zones.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-white font-semibold mb-1">The Tech Stack</h3>
+                        <p class="text-teal-300 text-sm">Raspberry Pi • Python • OpenCV • TensorFlow</p>
+                    </div>
+                    <div>
+                        <h3 class="text-white font-semibold mb-1">The Software-to-Hardware Bridge</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">Engineered the integration logic directly on the Raspberry Pi. The onboard AI processes the camera feed to detect humans, and the Python scripts instantly translate that spatial data into physical motor control for autonomous navigation—entirely without a secondary microcontroller.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-          <h1>Adithyan U</h1>
+        <!-- ASAR DEEP DIVE SECTION -->
+        <section class="glass-card rounded-3xl p-8 md:p-12 shadow-xl">
+            <h2 class="text-3xl font-bold text-white mb-10">Yukthi 2026 Technical Deep Dive</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+                <div class="space-y-8 order-2 md:order-1">
+                    <div>
+                        <h3 class="text-white font-semibold text-lg mb-2">Real-World Constraints</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">Collaborated directly with local fire station officers to understand the strict operational requirements of disaster robotics.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-white font-semibold text-lg mb-2">Manual Override Protocols</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">Wrote secure failsafe logic allowing human operators to instantly bypass the autonomous AI and take full remote control of the rover during critical, high-risk deployments.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-white font-semibold text-lg mb-2">Digital Mapping</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">Developed and integrated real-time digital mapping features to process environmental data and assist rescue teams in efficient route planning.</p>
+                    </div>
+                </div>
+                <div class="rounded-xl overflow-hidden border border-zinc-700 bg-zinc-900 h-64 md:h-80 order-1 md:order-2">
+                    <img src="asar-vision.jpg.jpeg" alt="OpenCV Vision Feed" class="object-cover w-full h-full">
+                </div>
+            </div>
+        </section>
 
-          <div class="hero-title">
-            Computer Science Engineering Student | Robotics & AI Enthusiast
-          </div>
+        <!-- K9 SECTION -->
+        <section class="glass-card rounded-3xl p-8 md:p-12 shadow-xl">
+            <h2 class="text-3xl font-bold text-white mb-4">K9 Autonomous Surveillance Robot</h2>
+            <p class="text-gray-400 mb-10">The goal of this project was to develop a dynamic, autonomous indoor patrolling system capable of operating in unpredictable environments.</p>
 
-          <div class="location">
-            📍 Palakkad, Kerala, India
-          </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <div class="rounded-xl overflow-hidden border border-zinc-700 bg-zinc-900 h-64 md:h-auto">
+                    <img src="k9-robot.jpg.jpeg" alt="K9 Robot" class="object-cover w-full h-full">
+                </div>
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="text-white font-semibold mb-1">Tech Stack</h3>
+                        <p class="text-teal-300 text-sm">Raspberry Pi • Python • OpenCV</p>
+                    </div>
+                    <div>
+                        <h3 class="text-white font-semibold mb-1">Visual Processing</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">Engineered the software architecture to process optical sensor feeds in real-time, executing continuous facial recognition and human tracking within its operational area.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-white font-semibold mb-1">Dynamic Avoidance</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">Translated software-based spatial detection algorithms into instantaneous physical motor responses, allowing the robot to autonomously avoid obstacles while navigating unpredictable indoor environments.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-          <p>
-            Passionate about building intelligent robotic systems, embedded AI solutions, and resilient disaster-response technologies that bridge software intelligence with real-world hardware deployment.
-          </p>
+        <!-- BEACON SECTION -->
+        <section class="glass-card rounded-3xl p-8 md:p-12 shadow-xl">
+            <p class="text-teal-400 font-bold tracking-wider text-sm mb-2 uppercase">Finalist - Sankalp Hackathon 2025</p>
+            <h2 class="text-3xl font-bold text-white mb-10">Beacon - Offline Flood Relief App</h2>
 
-          <div class="contact-links">
-            <a href="mailto:adithyan27602@gmail.com">Email</a>
-            <a href="tel:+918714227602">Phone</a>
-            <a href="#">LinkedIn</a>
-            <a href="#">GitHub</a>
-            <a href="#">Dribbble</a>
-          </div>
-        </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                
+                <!-- 3-IMAGE LAYOUT -->
+                <div class="flex flex-col gap-4">
+                    <!-- Image 1: Logo -->
+                    <div class="rounded-xl overflow-hidden border border-zinc-700 bg-zinc-900 h-48 md:h-56 p-4 flex justify-center items-center">
+                        <img src="beacon-logo.jpg.jpeg" alt="Beacon App Logo" class="object-contain h-full w-auto">
+                    </div>
+                    <!-- Images 2 & 3: Screens side-by-side -->
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="rounded-xl overflow-hidden border border-zinc-700 bg-zinc-900 h-48 md:h-56">
+                            <img src="beacon-screens-1.jpg.jpeg" alt="Beacon Screens Part 1" class="object-cover object-top w-full h-full">
+                        </div>
+                        <div class="rounded-xl overflow-hidden border border-zinc-700 bg-zinc-900 h-48 md:h-56">
+                            <img src="beacon-screens-2.jpg.jpeg" alt="Beacon Screens Part 2" class="object-cover object-top w-full h-full">
+                        </div>
+                    </div>
+                </div>
 
-      </div>
+                <!-- TEXT CONTENT -->
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="text-white font-semibold mb-1">Role</h3>
+                        <p class="text-gray-400 text-sm">UI/UX Design & Network Logic</p>
+                    </div>
+                    <div>
+                        <h3 class="text-white font-semibold mb-1">The Goal</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">Ensure emergency communication during complete network outages using decentralized technology.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-white font-semibold mb-1">The Tech Stack</h3>
+                        <p class="text-teal-300 text-sm">Flutter • Dart • Bluetooth Low Energy (BLE)</p>
+                    </div>
+                    <div>
+                        <h3 class="text-white font-semibold mb-1">Mesh Networking</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">Optimized BLE device discovery algorithms to rapidly form a peer-to-peer mesh network between devices.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-white font-semibold mb-1">User Experience</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">Designed the frontend interface to be highly intuitive during high-stress disaster scenarios, proving my ability to bridge complex backend communication protocols with accessible user design.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLS GRID -->
+        <section class="py-10">
+            <h2 class="text-2xl font-bold text-white mb-8 text-center">Skills & Technologies at a Glance</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="p-6 glass-card rounded-2xl">
+                    <h3 class="text-teal-400 font-bold mb-2">🤖 Robotics & AI</h3>
+                    <p class="text-gray-400 text-sm">Raspberry Pi, TensorFlow, OpenCV - building intelligent autonomous systems for real-world deployment.</p>
+                </div>
+                <div class="p-6 glass-card rounded-2xl">
+                    <h3 class="text-teal-400 font-bold mb-2">💻 Software Development</h3>
+                    <p class="text-gray-400 text-sm">Python, Flutter, Dart - from backend logic to polished frontend interfaces.</p>
+                </div>
+                <div class="p-6 glass-card rounded-2xl">
+                    <h3 class="text-teal-400 font-bold mb-2">📡 Networking & IoT</h3>
+                    <p class="text-gray-400 text-sm">Bluetooth Low Energy, mesh networking, hardware-software integration on embedded platforms.</p>
+                </div>
+                <div class="p-6 glass-card rounded-2xl">
+                    <h3 class="text-teal-400 font-bold mb-2">🎨 UI/UX Design</h3>
+                    <p class="text-gray-400 text-sm">Human-centered design for high-stress environments, bridging complex protocols with intuitive interfaces.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="text-center py-8 border-t border-zinc-800">
+            <p class="text-gray-500 text-sm">Let's Connect: Reach out via <a href="mailto:adithyan27602@gmail.com" class="text-teal-400 hover:underline">adithyan27602@gmail.com</a> or connect on <a href="https://linkedin.com/in/adithyan-u" class="text-teal-400 hover:underline">LinkedIn</a> / <a href="https://github.com/adithyan-u-DEV" class="text-teal-400 hover:underline">GitHub</a>.</p>
+        </footer>
+
     </div>
-  </section>
-
-  <!-- ASAR SECTION -->
-  <section>
-    <div class="container">
-
-      <div class="tag">
-        Winner - People's Choice Award, Yukthi 2026
-      </div>
-
-      <div class="glass-card project-card">
-
-        <div class="project-image">
-          <img src="asar-rover.jpg" alt="ASAR Rover">
-        </div>
-
-        <div class="project-content">
-          <h2>ASAR: Disaster-Relief Rover</h2>
-
-          <p><strong>Role:</strong> Software Architecture & Hardware Integration</p>
-
-          <p>
-            <strong>The Goal:</strong> Build the "brain" for a mobile disaster-relief rover capable of identifying and tracking individuals in hazardous zones.
-          </p>
-
-          <div class="tech-stack">
-            <span>Raspberry Pi</span>
-            <span>Python</span>
-            <span>OpenCV</span>
-            <span>TensorFlow</span>
-          </div>
-
-          <p>
-            <strong>The Software-to-Hardware Bridge:</strong> Engineered the integration logic directly on the Raspberry Pi. The onboard AI processes the camera feed to detect humans, and the Python scripts instantly translate that spatial data into physical motor control for autonomous navigation—entirely without a secondary microcontroller.
-          </p>
-
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- YUKTHI SECTION -->
-  <section>
-    <div class="container">
-
-      <div class="glass-card project-card">
-
-        <div class="project-content">
-          <h2>Yukthi 2026 Technical Deep Dive</h2>
-
-          <ul>
-            <li>
-              <strong>Real-World Constraints:</strong> Collaborated directly with local fire station officers to understand the strict operational requirements of disaster robotics.
-            </li>
-
-            <li>
-              <strong>Manual Override Protocols:</strong> Wrote secure failsafe logic allowing human operators to instantly bypass the autonomous AI and take full remote control of the rover during critical, high-risk deployments.
-            </li>
-
-            <li>
-              <strong>Digital Mapping:</strong> Developed and integrated real-time digital mapping features to process environmental data and assist rescue teams in efficient route planning.
-            </li>
-          </ul>
-        </div>
-
-        <div class="project-image">
-          <img src="asar-vision.jpg" alt="ASAR Vision">
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- K9 ROBOT SECTION -->
-  <section>
-    <div class="container">
-
-      <div class="glass-card project-card">
-
-        <div class="project-image">
-          <img src="k9-robot.jpg" alt="K9 Robot">
-        </div>
-
-        <div class="project-content">
-          <h2>K9 Autonomous Surveillance Robot</h2>
-
-          <p>
-            The goal of this project was to develop a dynamic, autonomous indoor patrolling system capable of operating in unpredictable environments.
-          </p>
-
-          <div class="tech-stack">
-            <span>Raspberry Pi</span>
-            <span>Python</span>
-            <span>OpenCV</span>
-          </div>
-
-          <p>
-            <strong>Visual Processing:</strong> Engineered the software architecture to process optical sensor feeds in real-time, executing continuous facial recognition and human tracking within its operational area.
-          </p>
-
-          <p>
-            <strong>Dynamic Avoidance:</strong> Translated software-based spatial detection algorithms into instantaneous physical motor responses, allowing the robot to autonomously avoid obstacles while navigating unpredictable indoor environments.
-          </p>
-
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- BEACON SECTION -->
-  <section>
-    <div class="container">
-
-      <div class="tag">
-        Finalist - Sankalp Hackathon 2025
-      </div>
-
-      <div class="glass-card project-card">
-
-        <div>
-          <div class="beacon-grid">
-            <img src="beacon-logo.jpg" alt="Beacon Logo">
-            <img src="beacon-screens-1.jpg" alt="Beacon Screen 1">
-            <img src="beacon-screens-2.jpg" alt="Beacon Screen 2">
-          </div>
-        </div>
-
-        <div class="project-content">
-          <h2>Beacon - Offline Flood Relief App</h2>
-
-          <p><strong>Role:</strong> UI/UX Design & Network Logic</p>
-
-          <p>
-            <strong>The Goal:</strong> Ensure emergency communication during complete network outages using decentralized technology.
-          </p>
-
-          <div class="tech-stack">
-            <span>Flutter</span>
-            <span>Dart</span>
-            <span>Bluetooth Low Energy (BLE)</span>
-          </div>
-
-          <p>
-            <strong>Mesh Networking:</strong> Optimized BLE device discovery algorithms to rapidly form a peer-to-peer mesh network between devices.
-          </p>
-
-          <p>
-            <strong>User Experience:</strong> Designed the frontend interface to be highly intuitive during high-stress disaster scenarios, proving my ability to bridge complex backend communication protocols with accessible user design.
-          </p>
-
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- SKILLS SECTION -->
-  <section>
-    <div class="container">
-
-      <h2>Skills & Technologies at a Glance</h2>
-
-      <div class="skills-grid">
-
-        <div class="glass-card skill-card">
-          <h3>Robotics & AI</h3>
-          <p>
-            Raspberry Pi, TensorFlow, OpenCV - building intelligent autonomous systems for real-world deployment.
-          </p>
-        </div>
-
-        <div class="glass-card skill-card">
-          <h3>Software Development</h3>
-          <p>
-            Python, Flutter, Dart - from backend logic to polished frontend interfaces.
-          </p>
-        </div>
-
-        <div class="glass-card skill-card">
-          <h3>Networking & IoT</h3>
-          <p>
-            Bluetooth Low Energy, mesh networking, hardware-software integration on embedded platforms.
-          </p>
-        </div>
-
-        <div class="glass-card skill-card">
-          <h3>UI/UX Design</h3>
-          <p>
-            Human-centered design for high-stress environments, bridging complex protocols with intuitive interfaces.
-          </p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container">
-      <p>© 2026 Adithyan U • Cyberpunk Portfolio</p>
-    </div>
-  </footer>
 
 </body>
 </html>
