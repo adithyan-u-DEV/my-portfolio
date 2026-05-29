@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Adithyan U | Portfolio</title>
 
   <style>
+
     *{
       margin:0;
       padding:0;
@@ -15,81 +16,83 @@
 
     :root{
       --bg:#09090b;
-      --card:rgba(24,24,27,0.72);
+      --card:rgba(18,18,20,0.75);
       --border:rgba(255,255,255,0.08);
       --text:#f4f4f5;
       --muted:#a1a1aa;
       --accent:#2dd4bf;
-      --shadow:0 0 40px rgba(45,212,191,0.08);
+      --shadow:0 0 35px rgba(45,212,191,0.08);
     }
 
     body{
-      font-family:Arial, Helvetica, sans-serif;
-      background:radial-gradient(circle at top,#111827 0%,#09090b 45%);
+      background:var(--bg);
       color:var(--text);
-      line-height:1.7;
+      font-family:Arial, Helvetica, sans-serif;
       overflow-x:hidden;
+      line-height:1.7;
+      background-image:
+      radial-gradient(circle at top left, rgba(45,212,191,0.08), transparent 30%),
+      radial-gradient(circle at bottom right, rgba(45,212,191,0.05), transparent 30%);
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
     }
 
     img{
       width:100%;
       display:block;
-      border-radius:18px;
-    }
-
-    a{
-      text-decoration:none;
-      transition:0.3s ease;
     }
 
     .container{
       width:92%;
-      max-width:1200px;
+      max-width:1180px;
       margin:auto;
     }
 
     section{
-      padding:80px 0;
+      padding:90px 0;
     }
 
-    .glass-card{
+    .glass{
       background:var(--card);
       border:1px solid var(--border);
       border-radius:28px;
       backdrop-filter:blur(18px);
       -webkit-backdrop-filter:blur(18px);
       box-shadow:var(--shadow);
-      overflow:hidden;
     }
 
     .tag{
       display:inline-block;
-      background:rgba(45,212,191,0.12);
-      border:1px solid rgba(45,212,191,0.3);
-      color:var(--accent);
-      padding:8px 16px;
+      padding:8px 18px;
       border-radius:999px;
+      border:1px solid rgba(45,212,191,0.35);
+      background:rgba(45,212,191,0.08);
+      color:var(--accent);
       font-size:0.85rem;
-      margin-bottom:20px;
       font-weight:600;
-      letter-spacing:0.4px;
+      margin-bottom:24px;
+      letter-spacing:0.5px;
     }
 
     h1{
-      font-size:4rem;
-      line-height:1.1;
-      margin-bottom:16px;
+      font-size:4.5rem;
+      line-height:1;
+      margin-bottom:18px;
     }
 
     h2{
-      font-size:2.4rem;
-      margin-bottom:22px;
+      font-size:2.5rem;
+      margin-bottom:26px;
+      line-height:1.2;
     }
 
     h3{
-      font-size:1.3rem;
-      margin-bottom:10px;
       color:var(--accent);
+      margin-bottom:12px;
+      font-size:1.25rem;
     }
 
     p{
@@ -98,114 +101,163 @@
       font-size:1rem;
     }
 
+    strong{
+      color:var(--text);
+    }
+
+    /* HERO */
+
     .hero{
       min-height:100vh;
       display:flex;
       align-items:center;
     }
 
-    .hero-grid{
+    .hero-card{
       display:grid;
-      grid-template-columns:340px 1fr;
-      gap:50px;
+      grid-template-columns:380px 1fr;
+      gap:60px;
+      padding:50px;
       align-items:center;
     }
 
-    .profile-image img{
-      border:2px solid rgba(45,212,191,0.25);
+    .hero-image{
+      position:relative;
+    }
+
+    .hero-image img{
+      border-radius:28px;
+      border:2px solid rgba(45,212,191,0.2);
+      object-fit:cover;
+      height:100%;
       box-shadow:0 0 40px rgba(45,212,191,0.15);
     }
 
-    .hero-title{
-      color:var(--accent);
-      margin-bottom:10px;
+    .hero-subtitle{
       font-size:1.2rem;
+      color:var(--accent);
+      margin-bottom:14px;
       font-weight:600;
     }
 
     .location{
+      margin-bottom:28px;
       color:#d4d4d8;
-      margin-bottom:25px;
+      font-size:1rem;
     }
 
-    .contact-links{
-      display:flex;
-      flex-wrap:wrap;
+    .contact-box{
+      margin-top:35px;
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
       gap:14px;
-      margin-top:25px;
     }
 
-    .contact-links a{
-      padding:10px 18px;
-      border-radius:12px;
-      background:rgba(255,255,255,0.03);
+    .contact-item{
       border:1px solid var(--border);
+      background:rgba(255,255,255,0.03);
+      border-radius:16px;
+      padding:14px 18px;
+      transition:0.3s ease;
+    }
+
+    .contact-item:hover{
+      border-color:rgba(45,212,191,0.4);
+      transform:translateY(-3px);
+    }
+
+    .contact-item span{
+      display:block;
+      font-size:0.82rem;
+      color:var(--muted);
+      margin-bottom:4px;
+    }
+
+    .contact-item p{
+      margin:0;
       color:var(--text);
       font-size:0.95rem;
+      word-break:break-word;
     }
 
-    .contact-links a:hover{
-      border-color:var(--accent);
-      color:var(--accent);
-      transform:translateY(-2px);
-    }
+    /* PROJECT SECTIONS */
 
     .project-card{
       display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:40px;
-      padding:40px;
-      margin-top:30px;
+      grid-template-columns:1.1fr 1fr;
+      gap:50px;
+      padding:45px;
       align-items:center;
     }
 
+    .reverse{
+      grid-template-columns:1fr 1.1fr;
+    }
+
     .project-image img{
-      height:100%;
+      border-radius:22px;
       object-fit:cover;
+      height:100%;
+      min-height:450px;
+      border:1px solid rgba(255,255,255,0.06);
     }
 
     .tech-stack{
       display:flex;
       flex-wrap:wrap;
       gap:10px;
-      margin:18px 0 25px;
+      margin:22px 0 28px;
     }
 
     .tech-stack span{
-      background:rgba(45,212,191,0.1);
+      background:rgba(45,212,191,0.08);
+      border:1px solid rgba(45,212,191,0.28);
       color:var(--accent);
-      border:1px solid rgba(45,212,191,0.25);
       padding:8px 14px;
       border-radius:999px;
-      font-size:0.85rem;
+      font-size:0.84rem;
       font-weight:600;
     }
 
-    .project-content ul{
+    ul{
       padding-left:18px;
       color:var(--muted);
     }
 
-    .project-content li{
-      margin-bottom:14px;
+    li{
+      margin-bottom:18px;
     }
+
+    /* BEACON GRID */
 
     .beacon-grid{
       display:grid;
-      grid-template-columns:repeat(3,1fr);
+      grid-template-columns:1fr 1fr;
       gap:16px;
     }
 
     .beacon-grid img{
-      height:260px;
+      border-radius:18px;
       object-fit:cover;
+      height:220px;
+      border:1px solid rgba(255,255,255,0.06);
+    }
+
+    .beacon-grid img:first-child{
+      grid-column:1 / span 2;
+      height:240px;
+    }
+
+    /* SKILLS */
+
+    .skills-title{
+      margin-bottom:40px;
     }
 
     .skills-grid{
       display:grid;
       grid-template-columns:repeat(2,1fr);
-      gap:25px;
-      margin-top:40px;
+      gap:24px;
     }
 
     .skill-card{
@@ -214,50 +266,63 @@
     }
 
     .skill-card:hover{
-      transform:translateY(-5px);
+      transform:translateY(-4px);
       border-color:rgba(45,212,191,0.3);
     }
 
-    .footer{
-      padding:40px 0;
+    /* FOOTER */
+
+    footer{
+      padding:50px 0;
       text-align:center;
       border-top:1px solid rgba(255,255,255,0.06);
       color:var(--muted);
     }
 
-    @media(max-width:992px){
+    /* MOBILE */
 
-      .hero-grid,
-      .project-card{
+    @media(max-width:1000px){
+
+      .hero-card,
+      .project-card,
+      .reverse{
         grid-template-columns:1fr;
       }
 
-      .hero{
-        padding-top:80px;
+      .hero-card{
+        padding:35px;
       }
 
-      .profile-image{
-        max-width:320px;
+      .project-card{
+        padding:30px;
+      }
+
+      .hero-image{
+        max-width:420px;
         margin:auto;
       }
 
       h1{
-        font-size:3rem;
+        font-size:3.3rem;
       }
     }
 
     @media(max-width:768px){
 
       section{
-        padding:60px 0;
+        padding:70px 0;
       }
 
       h1{
-        font-size:2.5rem;
+        font-size:2.6rem;
       }
 
       h2{
         font-size:2rem;
+      }
+
+      .contact-box{
+        grid-template-columns:1fr;
       }
 
       .skills-grid{
@@ -268,27 +333,30 @@
         grid-template-columns:1fr;
       }
 
-      .project-card{
-        padding:25px;
+      .beacon-grid img:first-child{
+        grid-column:auto;
       }
 
-      .contact-links{
-        flex-direction:column;
-      }
-
-      .contact-links a{
-        width:100%;
-        text-align:center;
+      .project-image img{
+        min-height:auto;
       }
     }
 
     @media(max-width:500px){
 
-      h1{
-        font-size:2rem;
+      .hero-card{
+        padding:25px;
       }
 
-      .hero-title{
+      .project-card{
+        padding:22px;
+      }
+
+      h1{
+        font-size:2.1rem;
+      }
+
+      .hero-subtitle{
         font-size:1rem;
       }
 
@@ -296,28 +364,30 @@
         font-size:0.95rem;
       }
     }
+
   </style>
 </head>
 
 <body>
 
-  <!-- HERO SECTION -->
+  <!-- HERO -->
+
   <section class="hero">
     <div class="container">
 
-      <div class="hero-grid">
+      <div class="hero-card glass">
 
-        <div class="profile-image">
+        <div class="hero-image">
           <img src="profile.jpg.jpeg" alt="Adithyan U">
         </div>
 
-        <div class="hero-text">
+        <div class="hero-content">
 
-          <div class="tag">Cyberpunk Portfolio</div>
+          <div class="tag">Portfolio 2026</div>
 
           <h1>Adithyan U</h1>
 
-          <div class="hero-title">
+          <div class="hero-subtitle">
             Computer Science Engineering Student | Robotics & AI Enthusiast
           </div>
 
@@ -326,15 +396,36 @@
           </div>
 
           <p>
-            Passionate about building intelligent robotic systems, embedded AI solutions, and resilient disaster-response technologies that bridge software intelligence with real-world hardware deployment.
+            Passionate about robotics, embedded AI systems, disaster-response technology, and software-to-hardware integration for real-world deployment.
           </p>
 
-          <div class="contact-links">
-            <a href="mailto:adithyan27602@gmail.com">Email</a>
-            <a href="tel:+918714227602">Phone</a>
-            <a href="#">LinkedIn</a>
-            <a href="#">GitHub</a>
-            <a href="#">Dribbble</a>
+          <div class="contact-box">
+
+            <a href="mailto:adithyan27602@gmail.com" class="contact-item">
+              <span>Email</span>
+              <p>adithyan27602@gmail.com</p>
+            </a>
+
+            <a href="tel:+918714227602" class="contact-item">
+              <span>Phone</span>
+              <p>+91-8714227602</p>
+            </a>
+
+            <a href="https://linkedin.com/in/adithyan-u" target="_blank" class="contact-item">
+              <span>LinkedIn</span>
+              <p>linkedin.com/in/adithyan-u</p>
+            </a>
+
+            <a href="https://github.com/adithyan-u-DEV" target="_blank" class="contact-item">
+              <span>GitHub</span>
+              <p>github.com/adithyan-u-DEV</p>
+            </a>
+
+            <a href="https://dribbble.com/ad7kichu" target="_blank" class="contact-item">
+              <span>Dribbble</span>
+              <p>dribbble.com/ad7kichu</p>
+            </a>
+
           </div>
 
         </div>
@@ -344,15 +435,16 @@
     </div>
   </section>
 
-  <!-- ASAR SECTION -->
+  <!-- ASAR -->
+
   <section>
     <div class="container">
 
       <div class="tag">
-        Winner - People's Choice Award, Yukthi 2026
+        WINNER — PEOPLE'S CHOICE AWARD, YUKTHI 2026
       </div>
 
-      <div class="glass-card project-card">
+      <div class="project-card glass">
 
         <div class="project-image">
           <img src="asar-rover.jpg.jpeg" alt="ASAR Rover">
@@ -360,14 +452,16 @@
 
         <div class="project-content">
 
-          <h2>ASAR: Disaster-Relief Rover</h2>
+          <h2>Disaster-Relief Rover: AI-Powered Autonomous Navigation</h2>
 
           <p>
-            <strong>Role:</strong> Software Architecture & Hardware Integration
+            <strong>Role</strong><br>
+            Software Architecture & Hardware Integration
           </p>
 
           <p>
-            <strong>The Goal:</strong> Build the "brain" for a mobile disaster-relief rover capable of identifying and tracking individuals in hazardous zones.
+            <strong>The Goal</strong><br>
+            Build the "brain" for a mobile disaster-relief rover capable of identifying and tracking individuals in hazardous zones.
           </p>
 
           <div class="tech-stack">
@@ -378,7 +472,8 @@
           </div>
 
           <p>
-            <strong>The Software-to-Hardware Bridge:</strong> Engineered the integration logic directly on the Raspberry Pi. The onboard AI processes the camera feed to detect humans, and the Python scripts instantly translate that spatial data into physical motor control for autonomous navigation—entirely without a secondary microcontroller.
+            <strong>The Software-to-Hardware Bridge</strong><br>
+            Engineered the integration logic directly on the Raspberry Pi. The onboard AI processes the camera feed to detect humans, and the Python scripts instantly translate that spatial data into physical motor control for autonomous navigation — entirely without a secondary microcontroller.
           </p>
 
         </div>
@@ -388,28 +483,38 @@
     </div>
   </section>
 
-  <!-- YUKTHI DEEP DIVE -->
+  <!-- YUKTHI -->
+
   <section>
     <div class="container">
 
-      <div class="glass-card project-card">
+      <div class="project-card reverse glass">
 
         <div class="project-content">
 
-          <h2>Yukthi 2026 Technical Deep Dive</h2>
+          <div class="tag">
+            YUKTHI 2026 — TECHNICAL DEEP DIVE
+          </div>
+
+          <h2>Engineering for Real-World Disaster Scenarios</h2>
 
           <ul>
+
             <li>
-              <strong>Real-World Constraints:</strong> Collaborated directly with local fire station officers to understand the strict operational requirements of disaster robotics.
+              <strong>Real-World Constraints</strong><br>
+              Collaborated directly with local fire station officers to understand the strict operational requirements of disaster robotics.
             </li>
 
             <li>
-              <strong>Manual Override Protocols:</strong> Wrote secure failsafe logic allowing human operators to instantly bypass the autonomous AI and take full remote control of the rover during critical, high-risk deployments.
+              <strong>Manual Override Protocols</strong><br>
+              Wrote secure failsafe logic allowing human operators to instantly bypass the autonomous AI and take full remote control of the rover during critical, high-risk deployments.
             </li>
 
             <li>
-              <strong>Digital Mapping:</strong> Developed and integrated real-time digital mapping features to process environmental data and assist rescue teams in efficient route planning.
+              <strong>Digital Mapping</strong><br>
+              Developed and integrated real-time digital mapping features to process environmental data and assist rescue teams in efficient route planning.
             </li>
+
           </ul>
 
         </div>
@@ -423,11 +528,12 @@
     </div>
   </section>
 
-  <!-- K9 ROBOT -->
+  <!-- K9 -->
+
   <section>
     <div class="container">
 
-      <div class="glass-card project-card">
+      <div class="project-card glass">
 
         <div class="project-image">
           <img src="k9-robot.jpg.jpeg" alt="K9 Robot">
@@ -448,11 +554,13 @@
           </div>
 
           <p>
-            <strong>Visual Processing:</strong> Engineered the software architecture to process optical sensor feeds in real-time, executing continuous facial recognition and human tracking within its operational area.
+            <strong>Visual Processing</strong><br>
+            Engineered the software architecture to process optical sensor feeds in real-time, executing continuous facial recognition and human tracking within its operational area.
           </p>
 
           <p>
-            <strong>Dynamic Avoidance:</strong> Translated software-based spatial detection algorithms into instantaneous physical motor responses, allowing the robot to autonomously avoid obstacles while navigating unpredictable indoor environments.
+            <strong>Dynamic Avoidance</strong><br>
+            Translated software-based spatial detection algorithms into instantaneous physical motor responses, allowing the robot to autonomously avoid obstacles while navigating unpredictable indoor environments.
           </p>
 
         </div>
@@ -462,36 +570,29 @@
     </div>
   </section>
 
-  <!-- BEACON APP -->
+  <!-- BEACON -->
+
   <section>
     <div class="container">
 
       <div class="tag">
-        Finalist - Sankalp Hackathon 2025
+        FINALIST — SANKALP HACKATHON 2025
       </div>
 
-      <div class="glass-card project-card">
-
-        <div>
-
-          <div class="beacon-grid">
-            <img src="beacon-logo.jpg.png" alt="Beacon Logo">
-            <img src="beacon-screens-1.jpg.png" alt="Beacon Screen 1">
-            <img src="beacon-screens-2.jpg.png" alt="Beacon Screen 2">
-          </div>
-
-        </div>
+      <div class="project-card reverse glass">
 
         <div class="project-content">
 
-          <h2>Beacon - Offline Flood Relief App</h2>
+          <h2>Beacon – Offline Flood Relief Communication</h2>
 
           <p>
-            <strong>Role:</strong> UI/UX Design & Network Logic
+            <strong>Role</strong><br>
+            UI/UX Design & Network Logic
           </p>
 
           <p>
-            <strong>The Goal:</strong> Ensure emergency communication during complete network outages using decentralized technology.
+            <strong>The Goal</strong><br>
+            Ensure emergency communication during complete network outages using decentralized technology.
           </p>
 
           <div class="tech-stack">
@@ -501,12 +602,24 @@
           </div>
 
           <p>
-            <strong>Mesh Networking:</strong> Optimized BLE device discovery algorithms to rapidly form a peer-to-peer mesh network between devices.
+            <strong>Mesh Networking</strong><br>
+            Optimized BLE device discovery algorithms to rapidly form a peer-to-peer mesh network between devices.
           </p>
 
           <p>
-            <strong>User Experience:</strong> Designed the frontend interface to be highly intuitive during high-stress disaster scenarios, proving my ability to bridge complex backend communication protocols with accessible user design.
+            <strong>User Experience</strong><br>
+            Designed the frontend interface to be highly intuitive during high-stress disaster scenarios, proving the ability to bridge complex backend communication protocols with accessible user design.
           </p>
+
+        </div>
+
+        <div class="beacon-grid">
+
+          <img src="beacon-logo.jpg.png" alt="Beacon Logo">
+
+          <img src="beacon-screens-1.jpg.png" alt="Beacon Screen 1">
+
+          <img src="beacon-screens-2.jpg.png" alt="Beacon Screen 2">
 
         </div>
 
@@ -516,39 +629,54 @@
   </section>
 
   <!-- SKILLS -->
+
   <section>
     <div class="container">
 
-      <h2>Skills & Technologies at a Glance</h2>
+      <h2 class="skills-title">
+        Skills & Technologies at a Glance
+      </h2>
 
       <div class="skills-grid">
 
-        <div class="glass-card skill-card">
+        <div class="skill-card glass">
+
           <h3>Robotics & AI</h3>
+
           <p>
-            Raspberry Pi, TensorFlow, OpenCV - building intelligent autonomous systems for real-world deployment.
+            Raspberry Pi, TensorFlow, OpenCV — building intelligent autonomous systems for real-world deployment.
           </p>
+
         </div>
 
-        <div class="glass-card skill-card">
+        <div class="skill-card glass">
+
           <h3>Software Development</h3>
+
           <p>
-            Python, Flutter, Dart - from backend logic to polished frontend interfaces.
+            Python, Flutter, Dart — from backend logic to polished frontend interfaces.
           </p>
+
         </div>
 
-        <div class="glass-card skill-card">
+        <div class="skill-card glass">
+
           <h3>Networking & IoT</h3>
+
           <p>
             Bluetooth Low Energy, mesh networking, hardware-software integration on embedded platforms.
           </p>
+
         </div>
 
-        <div class="glass-card skill-card">
+        <div class="skill-card glass">
+
           <h3>UI/UX Design</h3>
+
           <p>
             Human-centered design for high-stress environments, bridging complex protocols with intuitive interfaces.
           </p>
+
         </div>
 
       </div>
@@ -557,9 +685,14 @@
   </section>
 
   <!-- FOOTER -->
-  <footer class="footer">
+
+  <footer>
     <div class="container">
-      <p>© 2026 Adithyan U • Cyberpunk Portfolio</p>
+
+      <p>
+        © 2026 Adithyan U — Robotics • AI • Embedded Systems
+      </p>
+
     </div>
   </footer>
 
